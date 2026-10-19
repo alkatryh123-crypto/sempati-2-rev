@@ -3,16 +3,20 @@ workflows:
     name: Android APK Build
     max_build_duration: 30
     instance_type: mac_mini_m1
+
     environment:
-  node: 18.19.0
-  java: 17
+      node: "18.19.0"
+      java: "17"
+
     scripts:
       - name: Install dependencies
         script: |
           npm install
+
       - name: Build Web App
         script: |
           npm run build
+
       - name: Setup Capacitor & Android Platform
         script: |
           npx cap init "Sympathy" "com.sympathy.app" --web-dir dist || true
@@ -20,11 +24,12 @@ workflows:
           npx cap add android || true
           npx cap copy android
           npx cap sync android
-      - name: Build Android APK (Debug / Release Unsigned)
+
+      - name: Build Android APK
         script: |
           cd android
           chmod +x gradlew
           ./gradlew assembleDebug
+
     artifacts:
       - android/app/build/outputs/apk/debug/*.apk
-      
