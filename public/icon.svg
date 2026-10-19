@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="sympathyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f43f5e" />
+      <stop offset="50%" stop-color="#e11d48" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#e11d48" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Background rounded rectangle for Android/PWA icon -->
+  <rect width="512" height="512" rx="128" fill="#ffffff" />
+  
+  <!-- Subtle circular halo -->
+  <circle cx="256" cy="256" r="210" fill="url(#sympathyGrad)" opacity="0.08" />
+
+  <!-- Outer Cycle Ring -->
+  <circle cx="256" cy="256" r="170" fill="none" stroke="url(#sympathyGrad)" stroke-width="28" stroke-linecap="round" stroke-dasharray="800 280" />
+
+  <!-- Center Heart with Glow -->
+  <g filter="url(#shadow)">
+    <path d="M256 385 C256 385, 140 300, 140 215 C140 160, 180 130, 225 130 C245 130, 256 142, 256 142 C256 142, 267 130, 287 130 C332 130, 372 160, 372 215 C372 300, 256 385, 256 385 Z" fill="url(#sympathyGrad)" />
+  </g>
+
+  <!-- Small accent sparkles -->
+  <circle cx="370" cy="150" r="12" fill="#f59e0b" />
+  <circle cx="140" cy="350" r="10" fill="#f43f5e" />
+</svg>
