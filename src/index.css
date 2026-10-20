@@ -8,13 +8,15 @@
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    overflow-y: auto !important; /* Dikey kaydırmaya kesin olarak izin verir */
     background-color: #f8fafc;
   }
 
   body {
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     -webkit-tap-highlight-color: transparent;
-    overscroll-behavior-y: none;
+    /* overscroll-behavior-y: none; -> Kaydırmayı kilitlediği için kaldırıldı */
+    -webkit-overflow-scrolling: touch; /* Mobilde akıcı kaydırma sağlar */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
